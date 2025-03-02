@@ -9,13 +9,13 @@ import {
 import SendIcon from '@mui/icons-material/Send';
 import MicIcon from '@mui/icons-material/Mic'; // Import microphone icon
 import StopIcon from '@mui/icons-material/Stop'; // Import stop icon
-import {
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-  useUser
-} from '@clerk/nextjs';
+// import {
+//   SignInButton,
+//   SignedIn,
+//   SignedOut,
+//   UserButton,
+//   useUser
+// } from '@clerk/nextjs';
 
 // Import your logo
 import logo from '../public/logoV2.png'; // public pathway
@@ -78,11 +78,10 @@ export default function Home() {
   // Initialize SpeechRecognition object
   useEffect(() => {
       if (isLoaded) {
-          let initialGreeting = "Hello! I'm the Aeros(CASP) certification support assistant. How can I help you today? You can use the options below to get started.";
-
-          if (isSignedIn && user) {
-              initialGreeting = `Hello ${user.firstName || user.username || 'there'}! I'm the Aeros(CASP) certification support assistant. How can I help you today? You can use the options below to get started.`;
-          }
+        let initialGreeting = "Hello! I'm the FAA Aircraft Certification Assistant. I can help determine if your aircraft design meets airworthiness requirements by collecting information and processing it through our certification engine. Select an option below or describe your aircraft to begin the certification process.";
+          // if (isSignedIn && user) {
+          //     initialGreeting = `Hello ${user.firstName || user.username || 'there'}! I'm the Aeros(CASP) certification support assistant. How can I help you today? You can use the options below to get started.`;
+          // }
 
           setMessages([{
               role: "model",
