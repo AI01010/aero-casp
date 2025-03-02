@@ -44,14 +44,14 @@ const theme = createTheme({
 });
 
 const quickReplies = [
-  "I'd like a screening for arthritis.",
-  "I think I have symptoms for autism.",
-  "I'm concerned about dementia.",
-  "What are the symptoms of COPD?",
-  "Tell me about hypertension.",
-  "What should I do if I have hypoglycemia?",
-  "I'm worried about pneumonia.",
-  "I have a general health question."
+  "I need to certify a new aircraft design.",
+  "What documents are needed for type certification?",
+  "How do I demonstrate structural integrity?",
+  "What are the emergency systems requirements?",
+  "Tell me about production certification.",
+  "What's required for airworthiness certification?",
+  "Help me with system reliability assessment.",
+  "I have a general certification question."
 ];
 
 export default function Home() {
@@ -440,10 +440,10 @@ export default function Home() {
         <ThemeProvider theme={theme}>
           <Box sx={{
             position: 'fixed',
-            top: "12%",
+            top: "5%",
             left: "5%",
             width: "90%",
-            height: "83%",
+            height: "90%",
             borderRadius: 2,
             boxShadow: 5,
             overflow: 'hidden',
