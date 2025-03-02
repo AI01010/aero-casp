@@ -72,7 +72,7 @@ export default function Home() {
   const [hypoglycemiaResultLine, setHypoglycemiaResults] = useState("")
   const [pneumoniaResultLine, setPneumoniaResults] = useState("")
   const [lastQuery, setLastQuery] = useState("")
-  const { isSignedIn, user, isLoaded } = useUser();
+  // const { isSignedIn, user, isLoaded } = useUser();
   const recognitionRef = useRef(null); // Ref for the SpeechRecognition object
 
   // Initialize SpeechRecognition object
