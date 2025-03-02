@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-## MediCASP: Your AI-Powered Medical Screening Assistant
+## AeroCASP
+AI and automated reasoning certification application
 
-MediCASP is an AI-powered medical screening assistant that combines medical knowledge and advanced reasoning to provide accessible preliminary health assessments across multiple conditions.
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
@@ -40,8 +39,3 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-
-Click here or copy paste if other links don't work: https://medi-casp.vercel.app/
-=======
-# aero-casp
->>>>>>> origin/main
