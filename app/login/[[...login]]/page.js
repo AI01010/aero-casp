@@ -42,8 +42,8 @@ export default function LoginPage() {
           <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>              
             {/* <Box style={{ display: 'flex', alignItems: 'center' }}> */}
               <Button color="inherit" href="/" sx={{ ml: 2 }}>
-                <Image src={logo} alt="MediCASP Logo" width={40} height={40} /><Typography variant="h6" fontWeight="600">
-                  MediCASP
+                <Image src={logo} alt="Aeros(CASP) Logo" width={40} height={40} /><Typography variant="h6" fontWeight="600">
+                  Aeros(CASP)
                 </Typography>
               </Button>
             {/* </Box> */}
@@ -65,7 +65,7 @@ export default function LoginPage() {
 
     {/* Background Image ----------------------------------------------------------------------------------------------*/}
       <Image 
-        src="/mdcsp_bckgrnd.png" 
+        src="/plane.gif" 
         alt="Background" 
         layout="fill"
         objectFit="cover"

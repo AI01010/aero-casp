@@ -22,15 +22,15 @@ import logo from '../public/logoV2.png'; // public pathway
 import logo2 from '../public/logoV1.png'; // public pathway
 
 // Theme customization based on logo colors
-const logoColor = '#39FF14'; // This is green, dominant color in the logo
+const logoColor = '#0a6826'; // This is green, dominant color in the logo
 const theme = createTheme({
   palette: {
       primary: {
-          main: '#02023a', // Dark blue, also in the logo
+          main: '#091F62', // Dark blue, also in the logo
           contrastText: '#fff',  // White text for contrast
       },
       secondary: {
-          main: '#00C850',  // Lighter green, also in the logo
+          main: '#0a6826',  // green, in the logo
           contrastText: '#000', // Black text for contrast
       },
       background: {
@@ -78,10 +78,10 @@ export default function Home() {
   // Initialize SpeechRecognition object
   useEffect(() => {
       if (isLoaded) {
-          let initialGreeting = "Hello! I'm the MediCASP medical support assistant. How can I help you today? You can use the options below to get started.";
+          let initialGreeting = "Hello! I'm the Aeros(CASP) certification support assistant. How can I help you today? You can use the options below to get started.";
 
           if (isSignedIn && user) {
-              initialGreeting = `Hello ${user.firstName || user.username || 'there'}! I'm the MediCASP medical support assistant. How can I help you today? You can use the options below to get started.`;
+              initialGreeting = `Hello ${user.firstName || user.username || 'there'}! I'm the Aeros(CASP) certification support assistant. How can I help you today? You can use the options below to get started.`;
           }
 
           setMessages([{
@@ -375,7 +375,7 @@ export default function Home() {
             left: 0,
             width: '100%',
             height: '100%',
-            backgroundColor: '#020221',
+            backgroundColor: '#091F62',
             zIndex: 9999,
             display: 'flex',
             justifyContent: 'center',
@@ -404,8 +404,8 @@ export default function Home() {
             <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>              
               {/* <Box style={{ display: 'flex', alignItems: 'center' }}> */}
                 <Button color="inherit" href="/" sx={{ ml: 2 }}>
-                  <Image src={logo} alt="MediCASP Logo" width={40} height={40} /><Typography variant="h6" fontWeight="600">
-                    MediCASP
+                  <Image src={logo} alt="Aeros(CASP) Logo" width={40} height={40} /><Typography variant="h6" fontWeight="600">
+                    Aeros(CASP)
                   </Typography>
                 </Button>
               {/* </Box> */}
@@ -427,7 +427,7 @@ export default function Home() {
 
         {/* Background Image ----------------------------------------------------------------------------------------------*/}
         <Image 
-          src="/mdcsp_bckgrnd.png" 
+          src="/plane.gif" 
           alt="Background" 
           layout="fill"
           objectFit="cover"
@@ -459,7 +459,7 @@ export default function Home() {
                 color: 'white',
               }}>
                 <Typography variant="h6" fontWeight="600">
-                  MediBot
+                  AeroBot
                 </Typography>
               </Box>
 
@@ -479,7 +479,7 @@ export default function Home() {
                       mb={2}
                     >
                       {message.role === "model" && (
-                        <Avatar alt="MediCASP Logo" src={logo.src} sx={{ mr: 1 }} /> // Use Image component
+                        <Avatar alt="Aeros(CASP) Logo" src={logo.src} sx={{ mr: 1 }} /> // Use Image component
                       )}
                       <Box
                         bgcolor={message.role === 'model' ? 'primary.light' : 'secondary.light'}
@@ -501,7 +501,7 @@ export default function Home() {
                 {isTyping && (
                   <Box display="flex" alignItems="center" mt={1}>
                     <CircularProgress size={20} />
-                    <Typography variant="body2" ml={1}>Bot is typing...</Typography>
+                    <Typography variant="body2" ml={1}>AeroBot is typing...</Typography>
                   </Box>
                 )}
               </Box>
@@ -561,7 +561,7 @@ export default function Home() {
                   </IconButton>
                 </Stack>
                 <Typography fontStyle="italic" sx={{ pt: 1, color: '#808080', textAlign: 'center' }}>
-                  This bot is designed to provide insights into a patients case of medical conditions, it does not replace a real doctor!
+                  This bot is designed to assist wiht certification of aricrafts in accordance with FAA regulations.
                 </Typography>
               </Box>
             </Stack>

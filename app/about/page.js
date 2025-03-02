@@ -44,31 +44,31 @@ const About = () => {
             fontFamily: 'Roboto, sans-serif',
         }}>
         {/* navibar ----------------------------------------------------------------------------------------------*/}
-           <ThemeProvider theme={theme}>
-            <AppBar position="static">
+            <ThemeProvider theme={theme}>
+                <AppBar position="static">
                 <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>              
-                {/* <Box style={{ display: 'flex', alignItems: 'center' }}> */}
+                    {/* <Box style={{ display: 'flex', alignItems: 'center' }}> */}
                     <Button color="inherit" href="/" sx={{ ml: 2 }}>
-                    <Image src={logo} alt="MediCASP Logo" width={40} height={40} /><Typography variant="h6" fontWeight="600">
-                        MediCASP
-                    </Typography>
+                        <Image src={logo} alt="Aeros(CASP) Logo" width={40} height={40} /><Typography variant="h6" fontWeight="600">
+                        Aeros(CASP)
+                        </Typography>
                     </Button>
-                {/* </Box> */}
-                <Box style={{ display: 'flex', alignItems: 'center' }}>
+                    {/* </Box> */}
+                    <Box style={{ display: 'flex', alignItems: 'center' }}>
                     <Button color="inherit" href="/about" sx={{ ml: 2 }}>
-                    About
+                        About
                     </Button>
-                    <SignedOut>
+                        <SignedOut>
                         <Button color="inherit" href="/login">{' '}Login</Button>
                         <Button color="inherit" href="/sign-up">{' '}Sign Up</Button>
-                    </SignedOut>
-                    <SignedIn>
+                        </SignedOut>
+                        <SignedIn>
                         <UserButton />
-                    </SignedIn>
-                </Box>
+                        </SignedIn>
+                    </Box>
                 </Toolbar>
-            </AppBar>
-           </ThemeProvider>
+                </AppBar>
+            </ThemeProvider>
 
            {/* Background Image ----------------------------------------------------------------------------------------------*/}
             <Box
@@ -83,7 +83,7 @@ const About = () => {
                 }}
             >
                 <Image
-                    src="/mdcsp_bckgrnd.png"
+                    src="/plane.gif"
                     alt="Background"
                     layout="fill"
                     objectFit="cover"
