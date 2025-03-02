@@ -399,16 +399,14 @@ export default function Home() {
 
       <Box sx={{ position: 'relative', width: '100vw', height: '100vh' }}>
         {/* navibar ----------------------------------------------------------------------------------------------*/}
-        <ThemeProvider theme={theme}>
+        {/* <ThemeProvider theme={theme}>
           <AppBar position="static">
             <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>              
-              {/* <Box style={{ display: 'flex', alignItems: 'center' }}> */}
                 <Button color="inherit" href="/" sx={{ ml: 2 }}>
                   <Image src={logo} alt="Aeros(CASP) Logo" width={40} height={40} /><Typography variant="h6" fontWeight="600">
                     Aeros(CASP)
                   </Typography>
                 </Button>
-              {/* </Box> */}
               <Box style={{ display: 'flex', alignItems: 'center' }}>
                 <Button color="inherit" href="/about" sx={{ ml: 2 }}>
                   About
@@ -423,7 +421,7 @@ export default function Home() {
               </Box>
             </Toolbar>
           </AppBar>
-        </ThemeProvider>
+        </ThemeProvider> */}
 
         {/* Background Image ----------------------------------------------------------------------------------------------*/}
         <Image 
