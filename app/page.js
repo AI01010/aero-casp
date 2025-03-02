@@ -77,7 +77,7 @@ export default function Home() {
 
   // Initialize SpeechRecognition object
   useEffect(() => {
-      if (isLoaded) {
+      // if (isLoaded) {
         let initialGreeting = "Hello! I'm the FAA Aircraft Certification Assistant. I can help determine if your aircraft design meets airworthiness requirements by collecting information and processing it through our certification engine. Select an option below or describe your aircraft to begin the certification process.";
           // if (isSignedIn && user) {
           //     initialGreeting = `Hello ${user.firstName || user.username || 'there'}! I'm the Aeros(CASP) certification support assistant. How can I help you today? You can use the options below to get started.`;
@@ -87,7 +87,7 @@ export default function Home() {
               role: "model",
               parts: [{ text: initialGreeting }]
           }]);
-      }
+      // }
   }, );//[isLoaded, isSignedIn, user]);
 
   // Ref for the chat box
