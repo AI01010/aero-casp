@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## MediCASP: Your AI-Powered Medical Screening Assistant
 
 MediCASP is an AI-powered medical screening assistant that combines medical knowledge and advanced reasoning to provide accessible preliminary health assessments across multiple conditions.
@@ -41,3 +42,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 
 Click here or copy paste if other links don't work: https://medi-casp.vercel.app/
+=======
+# aero-casp
+>>>>>>> origin/main
