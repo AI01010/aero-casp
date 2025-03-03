@@ -30,8 +30,8 @@ const theme = createTheme({
           contrastText: '#fff',  // White text for contrast
       },
       secondary: {
-          main: '#0a6826',  // green, in the logo
-          contrastText: '#000', // Black text for contrast
+          main: '#0a6820',  // green, in the logo
+          contrastText: '#fff', // Black text for contrast
       },
       background: {
           default: '#f5f5f5',
@@ -446,7 +446,7 @@ export default function Home() {
             borderRadius: 2,
             boxShadow: 5,
             overflow: 'hidden',
-            bgcolor: 'background.paper',
+            bgcolor: 'rgba(255, 255, 255, 0.8)', // Semi-transparent white (adjust alpha as needed)
           }}>
             <Stack direction="column" height="100%">
               {/* Header ----------------------------------------------------------------------------------------------*/}
