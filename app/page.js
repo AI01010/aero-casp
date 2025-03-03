@@ -563,7 +563,7 @@ export default function Home() {
                   </IconButton>
                 </Stack>
                 <Typography fontStyle="italic" sx={{ pt: 1, color: '#808080', textAlign: 'center' }}>
-                  This bot is designed to assist with certification of aricrafts in accordance with FAA regulations.
+                  This bot is designed to assist with certification of aircrafts in accordance with FAA regulations.
                 </Typography>
               </Box>
             </Stack>
