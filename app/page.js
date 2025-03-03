@@ -455,9 +455,12 @@ export default function Home() {
                 bgcolor: 'primary.main',
                 color: 'white',
               }}>
-                <Typography variant="h6" fontWeight="600">
-                  AeroBot
+                <Image src={logo} alt="Aeros(CASP) Logo" width={40} height={40} /><Typography variant="h6" fontWeight="600">
+                  Aeros(CASP)
                 </Typography>
+                {/* <Typography variant="h6" fontWeight="600">
+                  AeroBot
+                </Typography> */}
               </Box>
 
               {/* Chat messages ----------------------------------------------------------------------------------------------*/}
