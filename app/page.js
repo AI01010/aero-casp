@@ -78,7 +78,7 @@ export default function Home() {
   // Initialize SpeechRecognition object
   useEffect(() => {
       // if (isLoaded) {
-        let initialGreeting = "Hello! I'm the FAA Aircraft Certification Assistant. I can help determine if your aircraft design meets airworthiness requirements by collecting information and processing it through our certification engine. Select an option below or describe your aircraft to begin the certification process.";
+        let initialGreeting = "Hello! I'm the FAA Aircraft Certification Assistant*. I can help determine if your aircraft design meets airworthiness requirements by collecting information and processing it through our certification engine. Select an option below or describe your aircraft to begin the certification process.";
           // if (isSignedIn && user) {
           //     initialGreeting = `Hello ${user.firstName || user.username || 'there'}! I'm the Aeros(CASP) certification support assistant. How can I help you today? You can use the options below to get started.`;
           // }
@@ -563,7 +563,7 @@ export default function Home() {
                   </IconButton>
                 </Stack>
                 <Typography fontStyle="italic" sx={{ pt: 1, color: '#808080', textAlign: 'center' }}>
-                  This bot is designed to assist with certification of aircrafts in accordance with FAA regulations.
+                  *This bot is designed to assist with certification of aircrafts in accordance with FAA regulations.
                 </Typography>
               </Box>
             </Stack>
