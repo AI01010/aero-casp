@@ -455,9 +455,11 @@ export default function Home() {
                 bgcolor: 'primary.main',
                 color: 'white',
               }}>
-                <Image src={logo} alt="Aeros(CASP) Logo" width={40} height={40} /><Typography variant="h6" fontWeight="600">
-                  Aeros(CASP)
-                </Typography>
+                <Stack direction="row" alignItems="center" spacing={1}>
+                  <Image src={logo} alt="Aeros(CASP) Logo" width={40} height={40} /><Typography variant="h6" fontWeight="600">
+                    Aeros(CASP)
+                  </Typography>
+                </Stack>
                 {/* <Typography variant="h6" fontWeight="600">
                   AeroBot
                 </Typography> */}
