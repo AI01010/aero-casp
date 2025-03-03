@@ -88,7 +88,7 @@ export default function Home() {
               parts: [{ text: initialGreeting }]
           }]);
       // }
-  }, );//[isLoaded, isSignedIn, user]);
+  }, []); //[isLoaded, isSignedIn, user]);
 
   // Ref for the chat box
   const chatBoxRef = useRef(null);
