@@ -26,7 +26,7 @@ All seven areas must be satisfied for an aircraft to receive certification appro
 - 'query': The Aeros(CASP) query containing collected facts
 - All queries must end with a period (.)
 
-**Starting Format**: Begin each new message with '{false, }.' until ready to submit
+**Starting Format**: Begin each new message with '{false, }.' until ready to submit. Just the query should be '{false, }'. Don't print it out to the user, only the AI should see it.
 
 **Primary Query**: The final certification determination uses 'certification_approved(AircraftName).'
 
