@@ -257,32 +257,30 @@ export default function Home() {
     setIsTyping(true);
     //try to get AI's response
     try {
-      //reponse stores AIs' response.
-      const trueUserMessage = "CURRENT QUERIES: " + lastQuery + "\nQUERY RESULTS (if any): "  + autismResultLine + "\n" + dementiaResultLine + "\n" + arthritisResultLine + "\n" + 
-        copdResultLine + "\n" + hypertensionResultLine + "\n" + hypoglycemiaResultLine + 
-        "\n" + pneumoniaResultLine + "\n" + "USER MESSAGE: " + message
+      // Construct FAA certification query
+      const certificationQuery = `CURRENT QUERIES: ${lastQuery}\nUSER MESSAGE: ${message}`;
       const response = await fetch("/api/chat", {
         method: "POST",
-        headers: { 'Content-Type': "application/json" },
-        body: JSON.stringify([...messages, {role: "user", parts: [{text: trueUserMessage}]}])
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify([...messages, { role: "user", parts: [{ text: certificationQuery }] }])
       });
-      setAutismResults("")
-      setDementiaResults("")
-      setArthritisResults("")
-      setCOPDResults("")
-      setHypertensionResults("")
-      setHypoglycemiaResults("")
-      setPneumoniaResults("")
+  
+      // Reset previous certification results
+      setCertificationResult("");
+
       const data = await response.json();
       const botResponse = { role: "model", parts: [{ text: data.message }] };
       //add the ai's message to the history
       setMessages((prevMessages) => [...prevMessages, botResponse]);
       // Speak the bot's response
       speak(data.message);
-      console.log("john query: " + data.conditionStatus)
-      setLastQuery(data.conditionStatus)
-      //if there was a query returned.
-      parseQueryResults(data.queryResult)
+
+      console.log("john query: " + data.conditionStatus) // ? keep
+      // Update certification query state
+      setLastQuery(data.queryStatus || data.conditionStatus);       // ?  setLastQuery(data.conditionStatus);
+      
+      //if there was a query returned. Parse FAA certification results
+      parseQueryResults(data.queryResult);
 
     } catch (error) {
       console.error("Error sending message:", error);
