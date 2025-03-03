@@ -163,7 +163,7 @@ export default function Home() {
       // Voice Selection
       const voices = synth.getVoices();
       if (voices.length > 0) {
-          const preferredVoice = voices.find(voice => voice.name.includes('Ava')); // Example: looking for a voice that includes 'Ava'
+          const preferredVoice = voices.find(voice => voice.name.includes('Ava')); // looking for a voice that includes 'Ava'
           utterance.voice = preferredVoice || voices[0]; // Use preferred voice or default
       }
 
@@ -185,7 +185,7 @@ export default function Home() {
         return;
     }
 
-    // Stop any ongoing speech before new recording
+    // Stop any ongoing speech before new recording to avoid overlap
     synthRef.current?.cancel();
 
     setIsListening(true);
