@@ -224,97 +224,25 @@ export default function Home() {
       }
   };
   
-  const parseQueryResults = async(queries) => {
-    if(queries.length != 0)
-    {
-      setAutismResults("")
-      setDementiaResults("")
-      setArthritisResults("")
-      setCOPDResults("")
-      setHypertensionResults("")
-      setHypoglycemiaResults("")
-      setPneumoniaResults("")
-      for(const oneQuery of queries)
-      {
-        console.log("query results: " + oneQuery)
-        if(oneQuery.indexOf("no models") != -1 || oneQuery == "no.")
-        {
-          if(oneQuery.indexOf("has_autism") != -1)
-          {
-            setAutismResults("{SCREENING RESULTS: NO AUTISM}") 
-          }
-          else if(oneQuery.indexOf("has_dementia") != -1)
-          {
-            setDementiaResults("{SCREENING RESULTS: NO DEMENTIA}") 
-          }
-          else if(oneQuery.indexOf("has_ra") != -1)
-          {
-            setDementiaResults("{SCREENING RESULTS: NO ARTHRITIS}") 
-          }
-          else if(oneQuery.indexOf("has_copd") != -1)
-          {
-            setDementiaResults("{SCREENING RESULTS: NO COPD}") 
-          }
-          else if(oneQuery.indexOf("has_hyper_hypo_tension") != -1)
-          {
-            setDementiaResults("{SCREENING RESULTS: NO HYPERTENSION OR HYPOTENSION}") 
-          }
-          else if(oneQuery.indexOf("has_hypoglycemia") != -1)
-          {
-            setDementiaResults("{SCREENING RESULTS: NO HYPOGLYCEMIA}") 
-          }
-          else if(oneQuery.indexOf("has_pneumonia") != -1)
-          {
-            setDementiaResults("{SCREENING RESULTS: NO PNEUMONIA}") 
-          }
+  const parseQueryResults = async (queries) => {
+    if (queries.length !== 0) {
+      setCertificationResult(""); // Clear previous results
+  
+      for (const oneQuery of queries) {
+        console.log("query results:", oneQuery);
+  
+        // Check for certification success
+        if (oneQuery.includes("has been certified successfully")) {
+          setCertificationResult(`{CERTIFICATION RESULTS: ${oneQuery}}`);
         }
-        else
-        {
-          const searchForPhrase = "Y = "
-          const pointOfY = oneQuery.indexOf(searchForPhrase)
-          if(oneQuery.indexOf("has_autism") != -1)
-          {
-            const severityLevel = parseInt(oneQuery.substring(pointOfY + searchForPhrase.length, pointOfY + searchForPhrase.length + 1)) - 4
-            setAutismResults("{SCREENING RESULTS: POSSIBLE AUTISM. SEVERITY LEVEL: " + severityLevel + "}") 
-          }
-          else if(oneQuery.indexOf("has_dementia") != -1)
-          {
-            const startPoint = pointOfY + searchForPhrase.length
-            const severityLevel = oneQuery.substring(startPoint, startPoint + 6)
-            setDementiaResults("{SCREENING RESULTS: POSSIBLE DEMENTIA. SEVERITY LEVEL: " + severityLevel + "}")
-          }
-          else if(oneQuery.indexOf("has_ra") != -1)
-          {
-            const startPoint = pointOfY + searchForPhrase.length
-            const severityLevel = oneQuery.substring(startPoint, oneQuery.length - 1)
-            setDementiaResults("{SCREENING RESULTS: POSSIBLE ARTHRITIS. SEVERITY LEVEL: " + severityLevel + "}")
-          }
-          else if(oneQuery.indexOf("has_copd") != -1)
-          {
-            setDementiaResults("{SCREENING RESULTS: COPD MAY BE POSSIBLE. SHOULD BE MONITORED.}")
-          }
-          else if(oneQuery.indexOf("has_hyper_hypo_tension") != -1)
-          {
-            const startPoint = pointOfY + searchForPhrase.length
-            const typeOfBpDisorder = oneQuery.substring(startPoint, oneQuery.length - 2)
-            
-            setDementiaResults("{SCREENING RESULTS: USER MAY HAVE " + typeOfBpDisorder + ". SHOULD BE MONITORED.}")
-          }
-          else if(oneQuery.indexOf("has_hypoglycemia") != -1)
-          {
-            const startPoint = pointOfY + searchForPhrase.length
-            const severityLevel = oneQuery.substring(startPoint, oneQuery.length - 2)
-            setDementiaResults("{SCREENING RESULTS: POSSIBLE HYPOGLYCEMIA. SEVERITY LEVEL: " + severityLevel + "}")
-          }
-          else if(oneQuery.indexOf("has_pneumonia") != -1)
-          {
-            setDementiaResults("{SCREENING RESULTS: PNEUMONIA MAY BE POSSIBLE. SHOULD BE MONITORED.}")
-          }
+        // Check for certification failure
+        else if (oneQuery.includes("certification FAILED")) {
+          setCertificationResult(`{CERTIFICATION RESULTS: ${oneQuery}}`);
         }
       }
     }
-  }
-
+  };
+  
   const sendMessage = async() => {
     //don't send empty messages
     if (!message.trim()) return;
